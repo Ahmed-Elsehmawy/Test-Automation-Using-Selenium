@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  TestNG Suite Configuration
+  ==========================
+  - Parallel execution enabled at the suite level
+  - Each <test> block represents a browser run (Chrome, Edge, etc.)
+  - Listeners include custom screenshot logger and HTMLReporter for ReportNG
+-->
+
+<suite name="Suite" parallel="tests" thread-count="3">
+
+  <!-- =========================
+       TestNG Listeners
+       ========================= -->
+  <listeners>
+    <!-- Custom listener (base.Listeners) for logging & screenshots -->
+    <listener class-name="base.Listeners"/>
+    <!-- ReportNG HTML reporter -->
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+  </listeners>
+
+  <!-- =========================
+       Chrome Execution
+       ========================= -->
+  <test thread-count="3" name="ChromeTest" parallel="classes">
+    <!-- Browser parameter passed to BaseTest.setup() -->
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <!-- Test class executed in Chrome -->
+      <class name="testcase.FirstTestFW"/>
+    </classes>
+  </test>
+
+  <!-- =========================
+       Edge Execution
+       ========================= -->
+  <test thread-count="3" name="EdgeTest" parallel="classes">
+    <!-- Browser parameter passed to BaseTest.setup() -->
+    <parameter name="browser" value="edge"/>
+    <classes>
+      <!-- Test class executed in Edge -->
+      <class name="testcase.FirstTestFW"/>
+    </classes>
+  </test>
+  
+  <!-- =========================
+       Firefox Execution
+       ========================= -->
+  
+  <!-- Firefox Test -->
+  <test thread-count="3" name="FirefoxTest" parallel="classes">
+    <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="testcase.FirstTestFW"/>
+    </classes>
+  </test>
+
+</suite> <!-- Suite -->
