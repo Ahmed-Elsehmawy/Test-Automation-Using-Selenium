@@ -1,5 +1,11 @@
 # 🚀 Test Automation Framework
 
+[![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/your-username/TestAutomationFramework)
+[![Selenium](https://img.shields.io/badge/selenium-4.35.0-orange)](https://selenium.dev)
+[![TestNG](https://img.shields.io/badge/testng-7.11.0-red)](https://testng.org)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Java](https://img.shields.io/badge/java-11%2B-blue)](https://java.com)
+
 A robust **Selenium + TestNG** hybrid framework built in Java.  
 Supports **parallel cross-browser execution**, **data-driven testing (Excel)**, **logging**, and **rich reporting** (ExtentReports + ReportNG).
 
@@ -16,13 +22,14 @@ Supports **parallel cross-browser execution**, **data-driven testing (Excel)**, 
 - ✅ **Reports**:  
   - ExtentReports (`/reports`)  
   - ReportNG (`/test-output/html`)  
+- ✅ **Logging** with Log4j2
+- ✅ **Automatic driver management** with WebDriverManager
 
 ---
 
 ## 📂 Project Structure
 
 ```
-
 TestAutomationFramework/
 │── src/
 │   ├── main/java/
@@ -38,22 +45,27 @@ TestAutomationFramework/
 │── pom.xml
 │── testng.xml
 │── README.md
-
-````
+```
 
 ---
 
 ## ⚙️ Setup & Installation
 
-1. Clone the repo:
+### Prerequisites
+- Java 11 or higher
+- Maven 3.6.0 or higher
+- Git
+
+### Installation Steps
+1. Clone the repository:
    ```bash
    git clone https://github.com/your-username/TestAutomationFramework.git
-````
+   cd TestAutomationFramework
+   ```
 
 2. Import as a **Maven Project** into your IDE (Eclipse / IntelliJ).
 
 3. Run Maven install to download dependencies:
-
    ```bash
    mvn clean install
    ```
@@ -62,20 +74,29 @@ TestAutomationFramework/
 
 ## 🖥️ How to Run Tests
 
-* Run via **TestNG XML**:
+### Run via TestNG XML:
+```bash
+mvn test -DsuiteXmlFile=testng.xml
+```
 
-  ```bash
-  mvn test -DsuiteXmlFile=testng.xml
-  ```
+### Run specific test classes:
+```bash
+mvn test -Dtest=SearchTest
+```
 
-* Or directly from IDE:
-  Right-click `testng.xml` → **Run as TestNG Suite**.
+### Run with different browser:
+```bash
+mvn test -Dbrowser=firefox
+```
+
+### Run from IDE:
+Right-click `testng.xml` → **Run as TestNG Suite**.
 
 ---
 
 ## 🌐 Browser Configuration
 
-Update the browser and base URL in **`config.properties`**:
+Update the browser and base URL in **`src/test/resources/configfiles/config.properties`**:
 
 ```properties
 # Browser: chrome | firefox | edge
@@ -95,23 +116,30 @@ min_related_sections = 4
 
 ## 📊 Reports
 
-* **ExtentReports**: Generated under `/reports/Extent_<timestamp>.html`
-* **ReportNG HTML**: Check `/test-output/html`
+### ExtentReports
+- Location: `/reports/Extent_<timestamp>.html`
+- Feature-rich interactive HTML reports with charts and screenshots
+
+### ReportNG
+- Location: `/test-output/html/index.html`
+- Clean, simple HTML reports integrated with TestNG
 
 ---
 
 ## 📸 Screenshots
 
-* Captured automatically on **test failure/success**.
-* Saved under `/screenshots`.
+- Captured automatically on **test failure/success**
+- Saved under `/screenshots` directory
+- Embedded directly into ExtentReports
 
 ---
 
 ## 📗 Data-Driven Testing
 
-* Excel file: `src/test/resources/testdata/testdata.xlsx`
-* Each test method maps to a sheet with the same name.
-* Example: `SearchTest` → reads from `SearchTest` sheet.
+- Excel file: `src/test/resources/testdata/testdata.xlsx`
+- Each test method maps to a sheet with the same name
+- Example: `SearchTest` → reads from `SearchTest` sheet
+- Powered by Apache POI for Excel handling
 
 ---
 
@@ -119,22 +147,68 @@ min_related_sections = 4
 
 Managed via `pom.xml`:
 
-* **Selenium Java 4.35.0**
-* **TestNG 7.11.0**
-* **ReportNG**
-* **ExtentReports 5.1.1**
-* **Log4j2**
-* **Apache POI**
-* **WebDriverManager**
-* **Commons-IO**
+| Dependency | Version | Purpose |
+|------------|---------|---------|
+| Selenium Java | 4.35.0 | Browser automation |
+| TestNG | 7.11.0 | Test framework |
+| ReportNG | 1.1.4 | Enhanced reporting |
+| ExtentReports | 5.1.1 | Advanced reporting |
+| Log4j2 | 2.17.1 | Logging |
+| Apache POI | 5.2.3 | Excel handling |
+| WebDriverManager | 5.6.2 | Automatic driver management |
+| Commons-IO | 2.11.0 | File operations |
+
+---
+
+## 🧪 Test Examples
+
+The framework includes sample tests demonstrating:
+- Basic search functionality
+- Data-driven testing
+- Cross-browser compatibility
+- Screenshot capture
+- Custom assertions and validations
 
 ---
 
 ## 🤝 Contributing
 
-1. Fork the repo
-2. Create a new branch (`feature/your-feature`)
-3. Commit changes and push
-4. Create a Pull Request
+We welcome contributions! Please follow these steps:
 
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
+Please ensure your code follows existing patterns and includes appropriate tests.
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 📞 Support
+
+If you have any questions or issues, please:
+1. Check the existing [Issues](https://github.com/your-username/TestAutomationFramework/issues)
+2. Create a new issue with detailed description
+
+---
+
+## 🔄 Continuous Integration
+
+This framework can be easily integrated with CI/CD tools like:
+- Jenkins
+- GitHub Actions
+- GitLab CI
+- TeamCity
+
+Sample Jenkins pipeline scripts are available in the `jenkins/` directory.
+
+---
+
+*This framework is maintained by [Your Name/Team].*
