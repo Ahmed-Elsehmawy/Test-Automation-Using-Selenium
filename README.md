@@ -3,8 +3,8 @@
 [![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/your-username/TestAutomationFramework)
 [![Selenium](https://img.shields.io/badge/selenium-4.35.0-orange)](https://selenium.dev)
 [![TestNG](https://img.shields.io/badge/testng-7.11.0-red)](https://testng.org)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Java](https://img.shields.io/badge/java-11%2B-blue)](https://java.com)
+[![Maven](https://img.shields.io/badge/maven-3.6.0%2B-blue)](https://maven.apache.org)
 
 A robust **Selenium + TestNG** hybrid framework built in Java.  
 Supports **parallel cross-browser execution**, **data-driven testing (Excel)**, **logging**, and **rich reporting** (ExtentReports + ReportNG).
@@ -20,10 +20,10 @@ Supports **parallel cross-browser execution**, **data-driven testing (Excel)**, 
 - ✅ **Custom Listeners** for screenshot capture on success/failure  
 - ✅ **Config-driven waits & validations** (timeout, result count, etc.)  
 - ✅ **Reports**:  
-  - ExtentReports (`/reports`)  
-  - ReportNG (`/test-output/html`)  
-- ✅ **Logging** with Log4j2
-- ✅ **Automatic driver management** with WebDriverManager
+  - ExtentReports 5.1.1 (`/reports`)  
+  - ReportNG 1.1.4 (`/test-output/html`)  
+- ✅ **Logging** with Log4j2 2.25.1
+- ✅ **Automatic driver management** with WebDriverManager 6.3.1
 
 ---
 
@@ -116,11 +116,11 @@ min_related_sections = 4
 
 ## 📊 Reports
 
-### ExtentReports
+### ExtentReports 5.1.1
 - Location: `/reports/Extent_<timestamp>.html`
 - Feature-rich interactive HTML reports with charts and screenshots
 
-### ReportNG
+### ReportNG 1.1.4
 - Location: `/test-output/html/index.html`
 - Clean, simple HTML reports integrated with TestNG
 
@@ -137,15 +137,15 @@ min_related_sections = 4
 ## 📗 Data-Driven Testing
 
 - Excel file: `src/test/resources/testdata/testdata.xlsx`
+- Powered by Apache POI 5.4.1 for Excel handling
 - Each test method maps to a sheet with the same name
 - Example: `SearchTest` → reads from `SearchTest` sheet
-- Powered by Apache POI for Excel handling
 
 ---
 
 ## 🔧 Dependencies
 
-Managed via `pom.xml`:
+Managed via `pom.xml` with verified versions:
 
 | Dependency | Version | Purpose |
 |------------|---------|---------|
@@ -153,10 +153,17 @@ Managed via `pom.xml`:
 | TestNG | 7.11.0 | Test framework |
 | ReportNG | 1.1.4 | Enhanced reporting |
 | ExtentReports | 5.1.1 | Advanced reporting |
-| Log4j2 | 2.17.1 | Logging |
-| Apache POI | 5.2.3 | Excel handling |
-| WebDriverManager | 5.6.2 | Automatic driver management |
-| Commons-IO | 2.11.0 | File operations |
+| Log4j2 Core | 2.25.1 | Logging framework |
+| Log4j2 API | 2.25.1 | Logging API |
+| Apache POI | 5.4.1 | Excel handling |
+| POI OOXML | 5.4.1 | Excel OOXML support |
+| POI OOXML Schemas | 4.1.2 | Excel schema support |
+| XMLBeans | 5.3.0 | XML processing |
+| Commons Collections4 | 4.5.0 | Collection utilities |
+| WebDriverManager | 6.3.1 | Automatic driver management |
+| Commons IO | 2.20.0 | File operations |
+| Google Guice | 5.1.0 | Dependency injection |
+| Velocity Engine | 2.3 | Template engine |
 
 ---
 
@@ -185,20 +192,6 @@ Please ensure your code follows existing patterns and includes appropriate tests
 
 ---
 
-## 📜 License
-
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
-
----
-
-## 📞 Support
-
-If you have any questions or issues, please:
-1. Check the existing [Issues](https://github.com/your-username/TestAutomationFramework/issues)
-2. Create a new issue with detailed description
-
----
-
 ## 🔄 Continuous Integration
 
 This framework can be easily integrated with CI/CD tools like:
@@ -211,4 +204,4 @@ Sample Jenkins pipeline scripts are available in the `jenkins/` directory.
 
 ---
 
-*This framework is maintained by [Your Name/Team].*
+*This framework is maintained by [Ahmed_Elsehmawy].*
