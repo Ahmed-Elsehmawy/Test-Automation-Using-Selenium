@@ -54,12 +54,11 @@ TestAutomationFramework/
 ### Prerequisites
 - Java 11 or higher
 - Maven 3.6.0 or higher
-- Git
 
 ### Installation Steps
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/TestAutomationFramework.git
+   git clone https://github.com/Ahmed-Elsehmawy/Test-Automation-Using-Selenium.git
    cd TestAutomationFramework
    ```
 
@@ -71,23 +70,6 @@ TestAutomationFramework/
    ```
 
 ---
-
-## 🖥️ How to Run Tests
-
-### Run via TestNG XML:
-```bash
-mvn test -DsuiteXmlFile=testng.xml
-```
-
-### Run specific test classes:
-```bash
-mvn test -Dtest=SearchTest
-```
-
-### Run with different browser:
-```bash
-mvn test -Dbrowser=firefox
-```
 
 ### Run from IDE:
 Right-click `testng.xml` → **Run as TestNG Suite**.
@@ -167,40 +149,11 @@ Managed via `pom.xml` with verified versions:
 
 ---
 
-## 🧪 Test Examples
-
-The framework includes sample tests demonstrating:
-- Basic search functionality
-- Data-driven testing
-- Cross-browser compatibility
-- Screenshot capture
-- Custom assertions and validations
-
----
-
-## 🤝 Contributing
-
-We welcome contributions! Please follow these steps:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-Please ensure your code follows existing patterns and includes appropriate tests.
-
----
-
 ## 🔄 Continuous Integration
 
 This framework can be easily integrated with CI/CD tools like:
 - Jenkins
 - GitHub Actions
-- GitLab CI
-- TeamCity
-
-Sample Jenkins pipeline scripts are available in the `jenkins/` directory.
 
 ---
 
