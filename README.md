@@ -1,6 +1,3 @@
-Perfect ✅ Here’s the **full README.md** file you can copy and paste directly into your GitHub repo:
-
-```markdown
 # 🚀 Test Automation Framework
 
 A robust **Selenium + TestNG** hybrid framework built in Java.  
